@@ -18,7 +18,6 @@ namespace MegaDesk_Tapia
         int numDrawersBox;
         int depthBox;
 
-
         DeskQuote DeskQuote = new DeskQuote();
 
         string[] rushDaysData = new string[4] { "Free", "3 Days", "5 Days", "7 Days" }; 
@@ -27,7 +26,9 @@ namespace MegaDesk_Tapia
         {
             InitializeComponent();
 
-            cmbMaterial.DataSource = Enum.GetValues(typeof(DesktopMaterial));
+            // cmbMaterial.DataSource = Enum.GetValues(typeof(DesktopMaterial));
+            List<DesktopMaterial> materials = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
+            cmbMaterial.DataSource = materials;
             cmbRushOrder.DataSource = rushDaysData;
 
         }
@@ -47,7 +48,8 @@ namespace MegaDesk_Tapia
                 numDrawersBox = int.Parse(txtNumDrawers.Text);
                 depthBox = int.Parse(txtDepth.Text);
 
-                DesktopMaterial material = (DesktopMaterial)cmbMaterial.SelectedIndex;
+                DesktopMaterial material = (DesktopMaterial)cmbMaterial.SelectedItem;
+                // SelectedIndex is another option
 
                 // ExpectedDelivery rushDays = (ExpectedDelivery)cmbRushOrder.SelectedIndex; // Assuming rush order values are stored as strings in the ComboBox
                 string rushDays = cmbRushOrder.Text;
