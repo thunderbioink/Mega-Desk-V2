@@ -23,3 +23,4 @@ C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaD
 C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.exe
 C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.pdb
 C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.SearchQuotes.resources
+C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\rushOrderPrices.txt
