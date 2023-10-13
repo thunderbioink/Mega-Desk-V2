@@ -22,7 +22,7 @@ namespace MegaDesk_Tapia
             RushDays = rushDays;
             CustomerName = customerName;
             QuoteDate = DateTime.Now;
-            decimal[] rushOrderPrices = GetRushOrder();// Load the rush order prices
+            
          
             }
 
@@ -59,17 +59,18 @@ namespace MegaDesk_Tapia
 
         private decimal CalculateRushOrderPrice(string typeRush)
         {
+            decimal[,] rushOrderPrices = GetRushOrder();// Load the rush order prices
             decimal rushOrderPrice = 0;
             switch (typeRush)
             {
                 case "3 Days":
-                    rushOrderPrice = CalculateRushOrderPriceByArea(60, 70, 80);
+                    rushOrderPrice = CalculateRushOrderPriceByArea(rushOrderPrices[0,0], rushOrderPrices[0, 1], rushOrderPrices[0, 2]);
                     break;
                 case "5 Days":
-                    rushOrderPrice = CalculateRushOrderPriceByArea(40, 50, 60);
+                    rushOrderPrice = CalculateRushOrderPriceByArea(rushOrderPrices[1, 0], rushOrderPrices[1, 1], rushOrderPrices[1, 2]);
                     break;
                 case "7 Days":
-                    rushOrderPrice = CalculateRushOrderPriceByArea(30, 35, 40);
+                    rushOrderPrice = CalculateRushOrderPriceByArea(rushOrderPrices[2, 0], rushOrderPrices[2, 1], rushOrderPrices[2, 2]);
                     break;
                 case "Free":
                     break;
@@ -115,10 +116,10 @@ namespace MegaDesk_Tapia
 
 
         // Create a method to load the rush order prices from the file.
-        private decimal[] GetRushOrder()
+        private decimal[,] GetRushOrder()
         {
             // Define an array to store the rush order prices.
-            decimal[] rushOrderPrices = new decimal[9];
+            decimal[,] rushOrderPrices = new decimal[3,3];
 
             // Specify the path to the rush order prices file.
             string filePath = "rushOrderPrices.txt";
@@ -127,21 +128,15 @@ namespace MegaDesk_Tapia
             try
             {
                 string[] lines = File.ReadAllLines(filePath);
-
-                for (int i = 0; i < 9; i++)
+                int counter = 0;
+                for (int i = 0; i < 3; i++)
                 {
-                    if (i < lines.Length && decimal.TryParse(lines[i], out decimal price))
+                    for (int j = 0; j < 3; j++)
                     {
-                        rushOrderPrices[i] = price;
-                    }
-                    else
-                    {
-                        // Handle invalid data or incomplete lines.
-                        rushOrderPrices[i] = 0; // You can choose how to handle this.
+                        rushOrderPrices[i,j] = decimal.Parse(lines[counter]);
+                        counter++;
                     }
                 }
-
-                PrintRushOrderPrices(rushOrderPrices);
             }
             catch (Exception ex)
             {
