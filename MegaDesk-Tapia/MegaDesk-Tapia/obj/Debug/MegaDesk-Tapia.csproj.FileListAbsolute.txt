@@ -24,3 +24,21 @@ C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaD
 C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.pdb
 C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.SearchQuotes.resources
 C:\Users\TIMYTAPILLA\Desktop\BYUI 3\CSE_325_.NET Software Development\Team_MegaDesk\Mega-Desk-V2\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\rushOrderPrices.txt
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\rushOrderPrices.txt
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\MegaDesk-Tapia.exe.config
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\MegaDesk-Tapia.exe
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\MegaDesk-Tapia.pdb
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.csproj.AssemblyReference.cache
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.AddQuote.resources
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.DisplayQuote.resources
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.MainMenu.resources
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.Properties.Resources.resources
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.SearchQuotes.resources
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk_Tapia.ViewAllQuotes.resources
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.csproj.GenerateResource.cache
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.csproj.CoreCompileInputs.cache
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.exe
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.pdb
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\Newtonsoft.Json.dll
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\bin\Debug\Newtonsoft.Json.xml
+C:\Users\almaleticiac1\source\repos\MegaDesk_AlmaBranch\MegaDesk-Tapia\MegaDesk-Tapia\obj\Debug\MegaDesk-Tapia.csproj.CopyComplete

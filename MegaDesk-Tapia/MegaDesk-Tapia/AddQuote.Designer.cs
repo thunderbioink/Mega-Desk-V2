@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.addQuotesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,10 +168,10 @@
             // 
             this.submitbtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.submitbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitbtn.Location = new System.Drawing.Point(303, 470);
+            this.submitbtn.Location = new System.Drawing.Point(290, 470);
             this.submitbtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.submitbtn.Name = "submitbtn";
-            this.submitbtn.Size = new System.Drawing.Size(431, 81);
+            this.submitbtn.Size = new System.Drawing.Size(224, 81);
             this.submitbtn.TabIndex = 12;
             this.submitbtn.Text = "Submit";
             this.submitbtn.UseVisualStyleBackColor = false;
@@ -232,11 +233,25 @@
             this.label3.Size = new System.Drawing.Size(0, 31);
             this.label3.TabIndex = 17;
             // 
+            // addQuotesButton
+            // 
+            this.addQuotesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.addQuotesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addQuotesButton.Location = new System.Drawing.Point(513, 470);
+            this.addQuotesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addQuotesButton.Name = "addQuotesButton";
+            this.addQuotesButton.Size = new System.Drawing.Size(224, 81);
+            this.addQuotesButton.TabIndex = 18;
+            this.addQuotesButton.Text = "Add";
+            this.addQuotesButton.UseVisualStyleBackColor = false;
+            this.addQuotesButton.Click += new System.EventHandler(this.addQuotesButton_Click);
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 608);
+            this.Controls.Add(this.addQuotesButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -284,5 +299,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button addQuotesButton;
     }
 }

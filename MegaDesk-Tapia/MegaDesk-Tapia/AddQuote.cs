@@ -14,7 +14,7 @@ namespace MegaDesk_Tapia
     public partial class AddQuote : Form
     {
         string customer;
-        private int widthBox;
+        int widthBox;
         int numDrawersBox;
         int depthBox;
 
@@ -22,7 +22,7 @@ namespace MegaDesk_Tapia
 
         string[] rushDaysData = new string[4] { "Free", "3 Days", "5 Days", "7 Days" }; 
 
-    public AddQuote()
+        public AddQuote()
         {
             InitializeComponent();
 
@@ -54,17 +54,21 @@ namespace MegaDesk_Tapia
                 // ExpectedDelivery rushDays = (ExpectedDelivery)cmbRushOrder.SelectedIndex; // Assuming rush order values are stored as strings in the ComboBox
                 string rushDays = cmbRushOrder.Text;
 
-                // Create a Desk object
-                Desk Desk = new Desk(widthBox, depthBox, numDrawersBox, material);
+
 
                 // Validate user input (you can add more validation as needed)
 
+                decimal totalQuote = 0;
 
+                Desk Desk = new Desk(widthBox, depthBox, numDrawersBox, material);
+                DeskQuote DeskQuote = new DeskQuote(Desk, rushDays, customer, totalQuote);
 
+                int surfaceArea = DeskQuote.CalculateSurfaceArea(widthBox, depthBox);
+                Console.WriteLine(surfaceArea);
 
                 // Calculate the quote total
-                DeskQuote deskQuote = new DeskQuote(Desk, rushDays, customer);
-                decimal totalQuote = deskQuote.CalculateQuoteTotal(material, rushDays);
+
+                totalQuote = DeskQuote.CalculateQuoteTotal(material, rushDays);
 
                 // Create and show the DisplayQuote form
                 DisplayQuote displayQuoteForm = new DisplayQuote(totalQuote, customer, widthBox, depthBox, numDrawersBox, material.ToString(), cmbRushOrder.Text, DateTime.Now); ;
@@ -103,6 +107,37 @@ namespace MegaDesk_Tapia
             {
                 errorProvider.SetError(txtDepth, "");
             }
+        }
+
+        private void addQuotesButton_Click(object sender, EventArgs e)
+        {
+            DeskQuote.deskQuotesList = DeskQuote.LoadDeskQuotes();
+
+            customer = customerName.Text;
+            widthBox = int.Parse(txtWidth.Text);
+            numDrawersBox = int.Parse(txtNumDrawers.Text);
+            depthBox = int.Parse(txtDepth.Text);
+
+            DesktopMaterial material = (DesktopMaterial)cmbMaterial.SelectedItem;
+            // SelectedIndex is another option
+
+            // ExpectedDelivery rushDays = (ExpectedDelivery)cmbRushOrder.SelectedIndex; // Assuming rush order values are stored as strings in the ComboBox
+            string rushDays = cmbRushOrder.Text;
+
+            // Calculate the quote total
+            Desk Desk = new Desk(widthBox, depthBox, numDrawersBox, material);
+
+            decimal totalQuote = DeskQuote.CalculateQuoteTotal(material, rushDays);
+            
+            DeskQuote deskQuote = new DeskQuote(Desk, rushDays, customer, totalQuote);
+
+
+            DeskQuote.AddQuoteList(deskQuote);
+            DeskQuote.SaveDeskQuotes(DeskQuote.deskQuotesList);
+
+
+
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_Tapia
 {
-    internal class Desk
+    class Desk
     {
         public int Width { get; set; }
         public int Depth { get; set; }

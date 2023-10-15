@@ -4,27 +4,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Tapia
 {
     internal class DeskQuote
     {
-        public Desk Desk;
+        public Desk Desk = new Desk();
         public string RushDays;
         public string CustomerName;
         public DateTime QuoteDate;
+        public decimal totalQuote;
+
+        public List<DeskQuote> deskQuotesList;
 
         // Constructor to initialize the DeskQuote
-        public DeskQuote() { }
-        public DeskQuote(Desk desk, string rushDays, string customerName)
+        public DeskQuote() 
+        {
+            deskQuotesList = new List<DeskQuote>();
+        }
+        public DeskQuote(Desk desk, string rushDays, string customerName, decimal quote)
         {
             Desk = desk;
             RushDays = rushDays;
             CustomerName = customerName;
             QuoteDate = DateTime.Now;
-            
-         
-            }
+            totalQuote = quote; 
+        }
+
+        public void AddQuoteList(DeskQuote addElement)
+        {
+            deskQuotesList.Add(addElement);
+        }
 
         // Method to calculate the desk quote total
         public decimal CalculateQuoteTotal(DesktopMaterial material, string rushDays)
@@ -41,7 +52,7 @@ namespace MegaDesk_Tapia
         // Helper methods for calculating price components
         private decimal CalculateSurfaceAreaPrice()
         {
-            int surfaceArea = Desk.Width * Desk.Depth;
+            int surfaceArea = CalculateSurfaceArea(Desk.Width, Desk.Depth);
             decimal pricePerSquareInch = 1; // Price per square inch
             if (surfaceArea > 1000)
             {
@@ -55,6 +66,11 @@ namespace MegaDesk_Tapia
         {
             int drawersPrice = Desk.NumDrawers * 50; // $50 per drawer
             return drawersPrice;
+        }
+
+        public int CalculateSurfaceArea(int width, int depth)
+        {
+            return width * depth;
         }
 
         private decimal CalculateRushOrderPrice(string typeRush)
@@ -80,7 +96,7 @@ namespace MegaDesk_Tapia
 
         private decimal CalculateRushOrderPriceByArea(decimal smallPrice, decimal mediumPrice, decimal largePrice)
         {
-            int surfaceArea = Desk.Width * Desk.Depth;
+            int surfaceArea = CalculateSurfaceArea(Desk.Width, Desk.Depth);
             if (surfaceArea < 1000)
             {
                 return smallPrice;
@@ -154,5 +170,38 @@ namespace MegaDesk_Tapia
                 Console.WriteLine($"Rush Order Price {i + 1}: ${rushOrderPrices[i]}");
             }
         }
+
+
+        // Method to save DeskQuote objects to a JSON file
+        public void SaveDeskQuotes(List<DeskQuote> deskQuotes)
+        {
+            string jsonData = JsonConvert.SerializeObject(deskQuotes, Formatting.Indented);
+
+            // Specify the path to the JSON file where you want to save the data.
+            string filePath = "quotes.json";
+
+            try
+            {
+                File.WriteAllText(filePath, jsonData);
+                Console.WriteLine("Desk quotes saved to quotes.json.");
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions as needed.
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+
+        // Method to load DeskQuote objects from a JSON file
+        public List<DeskQuote> LoadDeskQuotes()
+        {
+            if (File.Exists("quotes.json"))
+            {
+                string jsonData = File.ReadAllText("quotes.json");
+                return JsonConvert.DeserializeObject<List<DeskQuote>>(jsonData);
+            }
+            return new List<DeskQuote>();
+        }
+
     }
 }
