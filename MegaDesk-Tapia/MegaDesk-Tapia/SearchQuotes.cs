@@ -12,6 +12,9 @@ namespace MegaDesk_Tapia
 {
     public partial class SearchQuotes : Form
     {
+
+        DeskQuote deskQuote = new DeskQuote();
+
         private List<DeskQuote> deskQuotes; // This should be set with your list of quotes.
 
         public SearchQuotes()
@@ -27,20 +30,29 @@ namespace MegaDesk_Tapia
             // Get the selected material from the ComboBox
             DesktopMaterial selectedMaterial = (DesktopMaterial)cmbMaterial.SelectedItem;
 
-            // Create a list to store the search results
-            List<DeskQuote> searchResults = new List<DeskQuote>();
+            deskQuote.deskQuotesList = deskQuote.LoadDeskQuotes();
 
-            // Iterate through the deskQuotes and filter quotes that match the selected material
-            // foreach (List<DeskQuote> quote in deskQuotes)
+            List<DeskQuote> quotes = deskQuote.deskQuotesList;
+
+            var elementsFound = quotes.Where(quote => quote.Desk.Material == selectedMaterial).ToList();
+
+            dataGridView.Rows.Clear();
+
+            foreach ( DeskQuote element in elementsFound ) 
             {
-                // if (quote.Desk.Material == selectedMaterial)
-                {
-                   //  searchResults.Add(quote);
-                }
+                int rowsIndex = dataGridView.Rows.Add();
+
+                dataGridView.Rows[rowsIndex].Cells[0].Value = element.CustomerName.ToString();
+                dataGridView.Rows[rowsIndex].Cells[1].Value = element.QuoteDate.ToString("dd mm yyyy");
+                dataGridView.Rows[rowsIndex].Cells[2].Value = element.Desk.Width.ToString();
+                dataGridView.Rows[rowsIndex].Cells[3].Value = element.Desk.Depth.ToString();
+                dataGridView.Rows[rowsIndex].Cells[4].Value = element.Desk.NumDrawers.ToString();
+                dataGridView.Rows[rowsIndex].Cells[5].Value = element.Desk.Material.ToString();
+                dataGridView.Rows[rowsIndex].Cells[6].Value = element.RushDays.ToString();
+                dataGridView.Rows[rowsIndex].Cells[7].Value = element.totalQuote.ToString();
+
             }
 
-            // Set the DataGridView's DataSource to display the search results
-            dataGridView.DataSource = searchResults;
         }
     }
 }
